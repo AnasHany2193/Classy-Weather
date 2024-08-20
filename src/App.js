@@ -75,20 +75,16 @@ class App extends React.Component {
     }
   };
 
+  setLocation = (e) => this.setState({ location: e.target.value });
+
   render() {
     return (
       <div className="app">
         <h1>Classy Weather</h1>
-
-        <div>
-          <input
-            type="text"
-            value={this.state.location}
-            placeholder="Search for location"
-            onChange={(e) => this.setState({ location: e.target.value })}
-          />
-        </div>
-
+        <Input
+          location={this.state.location}
+          onChangeLocation={this.setLocation}
+        />
         <button onClick={this.fetchWeather}>Get Weather</button>
 
         {this.state.isLoading && <p className="loader">Loading...</p>}
@@ -99,6 +95,21 @@ class App extends React.Component {
             location={this.state.displayLocation}
           />
         )}
+      </div>
+    );
+  }
+}
+
+class Input extends React.Component {
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          value={this.props.location}
+          placeholder="Search for location"
+          onChange={this.props.onChangeLocation}
+        />
       </div>
     );
   }
