@@ -55,6 +55,7 @@ input {
   background-color: #f0d2ce;
   padding: 1.6rem 3.2rem;
   border: none;
+  text-align: center;
   width: 100%;
   max-width: 32rem; /* Ensure a max-width */
 }
