@@ -15,7 +15,7 @@ body {
   font-size: 2rem;
   height: 100vh;
   color: #222;
-  background-color: #eabfb9;
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   display: flex;
   align-items: center;
   justify-content: center;
