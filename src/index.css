@@ -19,15 +19,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem; /* Add padding for small screens */
 }
 
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 112rem;
+  width: 70vw;
+  max-width: 112rem; /* Ensure a max-width for large screens */
   gap: 4rem;
-  padding: 6rem 0;
+  padding: 6rem 2rem; /* Adjust padding for responsiveness */
   border: 2px solid #222;
   outline: 2px solid #222;
   outline-offset: 1.2rem;
@@ -38,6 +40,7 @@ h1 {
   font-size: 6rem;
   letter-spacing: 2px;
   word-spacing: 5px;
+  text-align: center; /* Center align for smaller screens */
 }
 
 h2 {
@@ -52,7 +55,8 @@ input {
   background-color: #f0d2ce;
   padding: 1.6rem 3.2rem;
   border: none;
-  width: 32rem;
+  width: 100%;
+  max-width: 32rem; /* Ensure a max-width */
 }
 
 input:focus {
@@ -62,14 +66,15 @@ input:focus {
 .weather {
   list-style: none;
   display: flex;
+  flex-wrap: wrap; /* Enable wrapping on smaller screens */
   gap: 2.4rem;
+  justify-content: center; /* Center items on smaller screens */
 }
 
 .day {
   background-color: #f0d2ce;
   padding: 1.6rem 0 2rem;
   width: 12.8rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,4 +94,51 @@ input:focus {
 .loader {
   font-size: 2.4rem;
   font-weight: 700;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  html {
+    font-size: 56.25%; /* Adjust base font size for smaller screens */
+  }
+
+  h1 {
+    font-size: 4.8rem;
+  }
+
+  .app {
+    padding: 4rem 1.6rem;
+    outline-offset: 0.8rem;
+  }
+
+  .day {
+    width: 10.4rem;
+  }
+
+  .day span {
+    font-size: 4.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 50%; /* Further reduce base font size for very small screens */
+  }
+
+  h1 {
+    font-size: 3.6rem;
+  }
+
+  .app {
+    padding: 2rem 1rem;
+    outline-offset: 0.5rem;
+  }
+
+  .day {
+    width: 8.8rem;
+  }
+
+  .day span {
+    font-size: 3.6rem;
+  }
 }
